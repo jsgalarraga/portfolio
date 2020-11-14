@@ -20,7 +20,7 @@ class NarrowView extends StatelessWidget {
                   children: [
                     ImageView(),
                     Container(
-                      height: 600,
+                      height: 800,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
