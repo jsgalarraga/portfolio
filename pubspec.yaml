@@ -1,5 +1,5 @@
 name: portfolio
-description: A new Flutter project.
+description: jsgalarraga
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
@@ -40,6 +40,8 @@ flutter:
     - images/jsgalarraga.png
     - images/linkedin.png
     - images/andando_nieve.jpg
+    - images/hamaca.jpg
+    - images/de_pie_nieve.jpg
 
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a

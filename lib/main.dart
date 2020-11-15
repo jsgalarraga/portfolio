@@ -11,7 +11,7 @@ void main() {
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => LanguageModel())
+        ChangeNotifierProvider(create: (_) => LanguageModel()),
       ],
       child: MyApp(),
     ),

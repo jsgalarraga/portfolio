@@ -3,11 +3,23 @@ import 'package:flutter/material.dart';
 abstract class Texts{
   Texts._();
 
+  //Home Page
   String mainTitle;
   String mainDescription;
   String portfolio;
   String contact;
   String cv;
+
+  //Contact Page
+  String name;
+  String nameError;
+  String email;
+  String emailError;
+  String subject;
+  String subjectError;
+  String message;
+  String messageError;
+  String send;
 }
 
 class EspTexts implements Texts{
@@ -27,6 +39,33 @@ class EspTexts implements Texts{
 
   @override
   String portfolio = 'Portfolio';
+
+  @override
+  String email = 'Correo  *';
+
+  @override
+  String emailError = 'Por favor, introduzca un correo válido';
+
+  @override
+  String message = 'Mensaje  *';
+
+  @override
+  String messageError = 'Por favor, introduzca un mensaje';
+
+  @override
+  String name = 'Nombre  *';
+
+  @override
+  String nameError = 'Por favor, introduzca su nombre';
+
+  @override
+  String subject = 'Asunto  *';
+
+  @override
+  String subjectError = 'Por favor, introduzca un asunto';
+
+  @override
+  String send = 'Enviar';
 }
 
 class EngTexts implements Texts {
@@ -46,6 +85,33 @@ class EngTexts implements Texts {
 
   @override
   String portfolio = 'Portfolio';
+
+  @override
+  String email = 'Email  *';
+
+  @override
+  String emailError = 'Please, enter a valid email';
+
+  @override
+  String message = 'Message  *';
+
+  @override
+  String messageError = 'Please, enter a message';
+
+  @override
+  String name = 'Name  *';
+
+  @override
+  String nameError = 'Please, enter your name';
+
+  @override
+  String subject = 'Subject  *';
+
+  @override
+  String subjectError = 'Please, enter a subject';
+
+  @override
+  String send = 'Send';
 }
 
 enum Languages { esp, eng }
