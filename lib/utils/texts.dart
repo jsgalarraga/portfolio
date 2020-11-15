@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 abstract class Texts{
   Texts._();
 
+  String wip;
+
   //Home Page
   String mainTitle;
   String mainDescription;
@@ -23,6 +25,9 @@ abstract class Texts{
 }
 
 class EspTexts implements Texts{
+  @override
+  String wip = 'Trabajo en desarrollo';
+
   @override
   String mainTitle = 'Ingeniero / Solucionador de problemas';
 
@@ -69,6 +74,9 @@ class EspTexts implements Texts{
 }
 
 class EngTexts implements Texts {
+  @override
+  String wip = 'Work in progress';
+
   @override
   String mainTitle = 'Engineer / Problem solver';
 
