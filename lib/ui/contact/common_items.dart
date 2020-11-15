@@ -31,16 +31,12 @@ class Name extends StatelessWidget {
           style: TextStyle(fontSize: 16),
         ),
         Padding(padding: EdgeInsets.only(top: 10)),
-        Container(
-          height: 30,
-          color: Colors.white,
-          child: MyTextFormField(
-            errorMessage: context.watch<LanguageModel>().texts.nameError,
-            isEmail: false,
-            onSaved: (value){
-              name = value;
-            },
-          ),
+        MyTextFormField(
+          errorMessage: context.watch<LanguageModel>().texts.nameError,
+          isEmail: false,
+          onSaved: (value){
+            name = value;
+          },
         ),
       ],
     );
@@ -59,16 +55,12 @@ class Email extends StatelessWidget {
           style: TextStyle(fontSize: 16),
         ),
         Padding(padding: EdgeInsets.only(top: 10)),
-        Container(
-          height: 30,
-          color: Colors.white,
-          child: MyTextFormField(
-            errorMessage: context.watch<LanguageModel>().texts.emailError,
-            isEmail: true,
-            onSaved: (value){
-              email = value;
-            },
-          ),
+        MyTextFormField(
+          errorMessage: context.watch<LanguageModel>().texts.emailError,
+          isEmail: true,
+          onSaved: (value){
+            email = value;
+          },
         ),
       ],
     );
@@ -87,16 +79,12 @@ class Subject extends StatelessWidget {
           style: TextStyle(fontSize: 16),
         ),
         Padding(padding: EdgeInsets.only(top: 10)),
-        Container(
-          height: 30,
-          color: Colors.white,
-          child: MyTextFormField(
-            errorMessage: context.watch<LanguageModel>().texts.subjectError,
-            isEmail: false,
-            onSaved: (value){
-              subject = value;
-            },
-          ),
+        MyTextFormField(
+          errorMessage: context.watch<LanguageModel>().texts.subjectError,
+          isEmail: false,
+          onSaved: (value){
+            subject = value;
+          },
         ),
       ],
     );
@@ -115,16 +103,13 @@ class Message extends StatelessWidget {
           style: TextStyle(fontSize: 16),
         ),
         Padding(padding: EdgeInsets.only(top: 10)),
-        Container(
-          height: 200,
-          color: Colors.white,
-          child: MyTextFormField(
-            errorMessage: context.watch<LanguageModel>().texts.messageError,
-            isEmail: false,
-            onSaved: (value){
-              message = value;
-            },
-          ),
+        MyTextFormField(
+          maxLines: 10,
+          errorMessage: context.watch<LanguageModel>().texts.messageError,
+          isEmail: false,
+          onSaved: (value){
+            message = value;
+          },
         ),
       ],
     );
