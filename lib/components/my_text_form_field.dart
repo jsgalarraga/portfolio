@@ -4,16 +4,16 @@ final Set<_MyTextFormFieldState> allFields = <_MyTextFormFieldState>{};
 
 class MyTextFormField extends StatefulWidget {
   MyTextFormField({
-    @required this.isEmail,
     @required this.errorMessage,
     @required this.onSaved,
-    this.maxLines = 1,
+    this.isEmail = false,
+    this.isMessage = false,
   });
 
   final bool isEmail;
+  final bool isMessage;
   final String errorMessage;
   final Function(String) onSaved;
-  final int maxLines;
 
   @override
   _MyTextFormFieldState createState() => _MyTextFormFieldState();
@@ -45,11 +45,12 @@ class _MyTextFormFieldState extends State<MyTextFormField> {
 
   @override
   Widget build(BuildContext context) {
+    final node = FocusScope.of(context);
     return Container(
       constraints: BoxConstraints(
         maxHeight: showError
-            ? widget.maxLines == 1 ? 55 : 200
-            : widget.maxLines == 1 ? 34 : 200
+            ? widget.isMessage ? 200 : 55
+            : widget.isMessage ? 200 : 34
       ),
       child: TextFormField(
         controller: _controller,
@@ -59,7 +60,7 @@ class _MyTextFormFieldState extends State<MyTextFormField> {
             showError = false;
           });
         },
-        maxLines: widget.maxLines,
+        maxLines: widget.isMessage ? 10 : 1,
         textAlignVertical: TextAlignVertical.center,
         decoration: InputDecoration(
           border: _border,
@@ -67,12 +68,14 @@ class _MyTextFormFieldState extends State<MyTextFormField> {
           focusedBorder: _border,
           errorBorder: _errorBorder,
           focusedErrorBorder: _errorBorder,
-          contentPadding: EdgeInsets.symmetric(horizontal: 8.0, vertical: widget.maxLines == 1 ? 0.0 : 10.0),
+          contentPadding: EdgeInsets.symmetric(horizontal: 8.0, vertical: widget.isMessage ? 10.0 : 0.0),
           errorText: showError ? widget.errorMessage : null,
         ),
         cursorWidth: 1.0,
         cursorColor: Colors.white,
-        // style: TextStyle(color: MyColors.darkBlue),
+        textInputAction: widget.isMessage ? TextInputAction.done : TextInputAction.next,
+        onEditingComplete: () => node.nextFocus(),
+        onFieldSubmitted: (_) => node.unfocus(),
       ),
     );
   }

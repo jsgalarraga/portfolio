@@ -33,7 +33,6 @@ class Name extends StatelessWidget {
         Padding(padding: EdgeInsets.only(top: 10)),
         MyTextFormField(
           errorMessage: context.watch<LanguageModel>().texts.nameError,
-          isEmail: false,
           onSaved: (value){
             name = value;
           },
@@ -81,7 +80,6 @@ class Subject extends StatelessWidget {
         Padding(padding: EdgeInsets.only(top: 10)),
         MyTextFormField(
           errorMessage: context.watch<LanguageModel>().texts.subjectError,
-          isEmail: false,
           onSaved: (value){
             subject = value;
           },
@@ -104,9 +102,8 @@ class Message extends StatelessWidget {
         ),
         Padding(padding: EdgeInsets.only(top: 10)),
         MyTextFormField(
-          maxLines: 10,
           errorMessage: context.watch<LanguageModel>().texts.messageError,
-          isEmail: false,
+          isMessage: true,
           onSaved: (value){
             message = value;
           },
@@ -130,6 +127,7 @@ class SendButton extends StatelessWidget {
           //TODO: Hacer el envio del email
           print('$name, $email, $subject, $message');
         }
+        FocusScope.of(context).unfocus();
       },
     );
   }
