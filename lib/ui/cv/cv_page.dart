@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/ui/back_widget.dart';
+import 'package:portfolio/ui/cv/narrow_view.dart';
+import 'package:portfolio/ui/cv/wide_view.dart';
 import 'package:portfolio/ui/language_widget.dart';
-import 'package:portfolio/utils/colors.dart';
 import 'package:portfolio/utils/dimensions.dart';
-import 'package:portfolio/utils/texts.dart';
-import 'package:provider/provider.dart';
 
 class CVPage extends StatefulWidget {
   @override
@@ -20,14 +19,8 @@ class _CVPageState extends State<CVPage> {
           LayoutBuilder(
             builder: (BuildContext context, BoxConstraints constraints) {
               if (constraints.maxWidth > MyDimensions.wideWidth)
-                return Container(
-                  color: MyColors.darkBlue,
-                  child: Center(child: Text(context.watch<LanguageModel>().texts.wip)),
-                );
-              return Container(
-                color: MyColors.darkBlue,
-                child: Center(child: Text(context.watch<LanguageModel>().texts.wip)),
-              );
+                return WideView();
+              return NarrowView();
             },
           ),
           Align(
