@@ -52,7 +52,7 @@ class ImageView extends StatelessWidget {
       child: Container(
         constraints: BoxConstraints.expand(height: 200),
         child: Image.asset(
-          'images/de_pie_nieve.jpg',
+          'images/de_pie_nieve_cut.jpg',
           fit: BoxFit.cover,
         ),
       ),
