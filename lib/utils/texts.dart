@@ -45,6 +45,9 @@ abstract class Texts{
   //////Personal
   String personalTitle;
   String personalText;
+  //////Sports
+  String sportsTitle;
+  String sportsText;
   //////Developer
   String develTitle;
   String develText;
@@ -54,6 +57,20 @@ abstract class Texts{
   //////Office
   String officeTitle;
   String officeText;
+
+  ////Experience
+  //////MedHome
+  String medHomeTitle;
+  String medHomeText;
+  String medHomePeriod;
+  //////ProtocolosQx
+  String protocolosTitle;
+  String protocolosText;
+  String protocolosPeriod;
+  //////Deloitte
+  String deloitteTitle;
+  String deloitteText;
+  String deloittePeriod;
 
 }
 
@@ -67,7 +84,8 @@ class EspTexts implements Texts{
   @override
   String mainDescription = 'Ingeniero Industrial especializado en Automática y Electrónica\n'
       'Desarrollador de Flutter y Python\n'
-      'Actualmente trabajando en Soluciones Med&Home como \nIngeniero de I+D / Desarrollador';
+      'Actualmente trabajando en Soluciones Med&Home como \nIngeniero de I+D / Desarrollador\n'
+      'Actualmente resido en Madrid';
   @override
   String contact = 'Contacto';
   @override
@@ -130,11 +148,17 @@ class EspTexts implements Texts{
   String personalTitle = 'Personales';
   @override
   String personalText = 'Trabajador de equipo, aprendizaje rápido, innovador, resolutivo';
+  //////Sports
+  @override
+  String sportsTitle = 'Deportes';
+  @override
+  String sportsText = '🚵🏽 ⛷️ 🎾 🏄🏽‍♂ 🤾🏽';
   //////Developer
   @override
   String develTitle = 'Programación';
   @override
-  String develText = 'Python, Flutter, Git, C, C++, Pyspark, MATLAB, Arduino, Linux, ROS, un poco de JavaScript';
+  String develText = 'Python, Flutter, Git, Linux, C, C++, Pyspark, MATLAB, Arduino, ROS, un poco de JavaScript '
+      'HTML y CSS';
   //////Engineering
   @override
   String engTitle = 'Ingeniería';
@@ -145,6 +169,37 @@ class EspTexts implements Texts{
   String officeTitle = 'Ofimática y Colaboración';
   @override
   String officeText = 'Microsoft Office, Google Suite, MS Teams, Jira, Slack';
+  ////Experience
+  //////MedHome
+  @override
+  String medHomeTitle = 'Ingeniero de Investigación y Desarrollo en Med & Home';
+  @override
+  String medHomeText = 'Diseño y desarrollo de equipamiento para quirófanos y soluciones para el sector médico, '
+      'principalmente como desarrollador Python (Extron), Android (Flutter) y Linux. Investigación de las necesidades '
+      'de los médicos para crear soluciones que faciliten su trabajo y sirvan para la formación y documentación '
+      'de sus procedimientos.';
+  @override
+  String medHomePeriod = 'Feb 2020 - Actualidad';
+  //////ProtocolosQx
+  @override
+  String protocolosTitle = 'Fundador de la App Protocolos Quirúrgicos | Desarrollador Flutter';
+  @override
+  String protocolosText = 'Concepción, diseño y desarrollo de una aplicación de protocolos quirúrgicos, en la que los '
+      'profesionales de medicina pueden consultar los protocolos de todas las intervenciones quirúrgicas para '
+      'desenvolverse en su trabajo de manera más eficiente y ayudar al personal de reciente incorporación a estar más integrado';
+  @override
+  String protocolosPeriod = 'Jun 2019 - Actualidad';
+  @override
+  //////Deloitte
+  @override
+  String deloitteTitle = 'Analista Junior en Deloitte';
+  @override
+  String deloitteText = 'Desarrollo de modelos de control en un entorno Big Data con el fin de automatizar procesos '
+      'de forma eficiente. Uso de Python, PySpark y Hive.\nEn esta experiencia ha aumentado mi conocimiento de la '
+      'tecnología Big Data, su implantación y su potencial, además de otras cualidades como la organización y '
+      'gestión de equipos.';
+  @override
+  String deloittePeriod = 'Sept 2019 - Feb 2020';
 }
 
 class EngTexts implements Texts {
@@ -157,7 +212,7 @@ class EngTexts implements Texts {
   @override
   String mainDescription = 'Industrial Engineer specialized in Electronics and Automation\n'
       'Flutter and Python developer\n'
-      'Working in Med&Home Solutions as a R&D Engineer / Developer';
+      'Working in Med&Home Solutions as a R&D Engineer / Developer\nCurrently residing in Madrid';
   @override
   String contact = 'Contact';
   @override
@@ -220,11 +275,17 @@ class EngTexts implements Texts {
   String personalTitle = 'Personal';
   @override
   String personalText = 'Team worker, fast learner, innovative, problem solver';
+  //////Sports
+  @override
+  String sportsTitle = 'Sports';
+  @override
+  String sportsText = '🚵🏽 ⛷️ 🎾 🏄🏽‍♂ 🤾🏽';
   //////Developer
   @override
   String develTitle = 'Programming';
   @override
-  String develText = 'Python, Flutter, Git, C, C++, Pyspark, MATLAB, Arduino, Linux, ROS, a bit of JavaScript';
+  String develText = 'Python, Flutter, Git, Linux, C, C++, Pyspark, MATLAB, Arduino, ROS, a bit of JavaScript, '
+      'HTML and CSS';
   //////Engineering
   @override
   String engTitle = 'Engineering';
@@ -235,6 +296,34 @@ class EngTexts implements Texts {
   String officeTitle = 'Office & Collaboration';
   @override
   String officeText = 'Microsoft Office, Google Suite, MS Teams, Jira, Slack';
+  ////Experience
+  //////MedHome
+  @override
+  String medHomeTitle = 'Research and Development Engineer at Med & Home';
+  @override
+  String medHomeText = 'Design and development of equipment for the operating room and medical sector. Mainly as '
+      'a Python, Flutter and Linux developer. Research about doctors\' needs to create solutions that facilitate '
+      'their work and serve for the training and documentation of their procedures';
+  @override
+  String medHomePeriod = 'Feb 2020 - Present';
+  //////ProtocolosQx
+  @override
+  String protocolosTitle = 'Founder at Protocolos Quirúrgicos App | Flutter Developer';
+  @override
+  String protocolosText = 'Definition, design and development of a surgical procedures app. Healthcare professionals '
+      'can find information about all surgical procedures so they can work efficiently. It also helps students '
+      'and newly hired professionals to be more integrated';
+  @override
+  String protocolosPeriod = 'June 2019 - Present';
+  //////Deloitte
+  @override
+  String deloitteTitle = 'Junior Analyst at Deloitte';
+  @override
+  String deloitteText = 'Control model development with PySpark in a Big Data framework aiming to automate '
+      'processes efficiently. Using Python, PySpark and Hive.\nIn this job, I learnt closely how Big Data '
+      'operates and its potential, also increasing my abilities to work with a team and manage tasks.';
+  @override
+  String deloittePeriod = 'Sept 2019 - Feb 2020';
 }
 
 enum Languages { esp, eng }

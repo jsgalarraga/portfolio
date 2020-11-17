@@ -67,11 +67,34 @@ class TabContent extends StatelessWidget {
 class ExperienceTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 400,
-      child: Center(
-        child: Text(context.watch<LanguageModel>().texts.wip),
-      ),
+    return LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints constraints) {
+          return Container(
+            height: 700,
+            width: constraints.maxWidth * .8,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                CvEntry(
+                  title: context.watch<LanguageModel>().texts.medHomeTitle,
+                  text: context.watch<LanguageModel>().texts.medHomeText,
+                  period: context.watch<LanguageModel>().texts.medHomePeriod,
+                ),
+                CvEntry(
+                  title: context.watch<LanguageModel>().texts.protocolosTitle,
+                  text: context.watch<LanguageModel>().texts.protocolosText,
+                  period: context.watch<LanguageModel>().texts.protocolosPeriod,
+                ),
+                CvEntry(
+                  title: context.watch<LanguageModel>().texts.deloitteTitle,
+                  text: context.watch<LanguageModel>().texts.deloitteText,
+                  period: context.watch<LanguageModel>().texts.deloittePeriod,
+                ),
+              ],
+            ),
+          );
+        }
     );
   }
 }
@@ -82,7 +105,7 @@ class SkillsTab extends StatelessWidget {
     return LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
           return Container(
-            height: 400,
+            height: 500,
             width: constraints.maxWidth * .8,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -91,6 +114,11 @@ class SkillsTab extends StatelessWidget {
                 CvEntry(
                   title: context.watch<LanguageModel>().texts.personalTitle,
                   text: context.watch<LanguageModel>().texts.personalText,
+                ),
+                CvEntry(
+                  title: context.watch<LanguageModel>().texts.sportsTitle,
+                  text: context.watch<LanguageModel>().texts.sportsText,
+                  textSize: 24,
                 ),
                 CvEntry(
                   title: context.watch<LanguageModel>().texts.develTitle,
@@ -152,11 +180,13 @@ class CvEntry extends StatelessWidget {
     this.title,
     this.text,
     this.period,
+    this.textSize,
   });
 
   final String title;
   final String text;
   final String period;
+  final double textSize;
 
   @override
   Widget build(BuildContext context) {
@@ -167,7 +197,7 @@ class CvEntry extends StatelessWidget {
         if (title != null) Text(title, style: TextStyle(fontSize: 18)),
         if (text != null) Padding(
           padding: const EdgeInsets.symmetric(vertical: 8.0),
-          child: Text(text, style: TextStyle(fontSize: 15)),
+          child: Text(text, style: TextStyle(fontSize: textSize ?? 15), textAlign: TextAlign.justify),
         ),
         if (period != null) Text(period, style: TextStyle(fontStyle: FontStyle.italic))
       ],

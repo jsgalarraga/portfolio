@@ -19,11 +19,11 @@ String getTabText(BuildContext context, TabType type){
 
 class CvTabModel extends ChangeNotifier{
   TabType currentTab = TabType.experience;
-  double tabSize = 620;
+  double tabSize = 920;
 
   Map<TabType, double> _tabSizes = {
-    TabType.experience: 620,
-    TabType.skills: 620,
+    TabType.experience: 920,
+    TabType.skills: 720,
     TabType.education: 620,
   };
 

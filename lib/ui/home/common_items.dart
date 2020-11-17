@@ -55,17 +55,17 @@ class ButtonsRow extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
+        // MyFlatButton(
+        //     text: context.watch<LanguageModel>().texts.portfolio,
+        //     onTap: () => Navigator.pushNamed(context, '/portfolio')
+        // ),
         MyFlatButton(
-            text: context.watch<LanguageModel>().texts.portfolio,
-            onTap: () => Navigator.pushNamed(context, '/portfolio')
+            text: context.watch<LanguageModel>().texts.cv,
+            onTap: () => Navigator.pushNamed(context, '/cv')
         ),
         MyFlatButton(
             text: context.watch<LanguageModel>().texts.contact,
             onTap: () => Navigator.pushNamed(context, '/contact')
-        ),
-        MyFlatButton(
-            text: context.watch<LanguageModel>().texts.cv,
-            onTap: () => Navigator.pushNamed(context, '/cv')
         ),
       ],
     );
@@ -79,19 +79,19 @@ class ButtonsCol extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
+          // MyFlatButton(
+          //   text: context.watch<LanguageModel>().texts.portfolio,
+          //   onTap: () => Navigator.pushNamed(context, '/portfolio'),
+          //   reactive: true,
+          // ),
           MyFlatButton(
-            text: context.watch<LanguageModel>().texts.portfolio,
-            onTap: () => Navigator.pushNamed(context, '/portfolio'),
+            text: context.watch<LanguageModel>().texts.cv,
+            onTap: () => Navigator.pushNamed(context, '/cv'),
             reactive: true,
           ),
           MyFlatButton(
             text: context.watch<LanguageModel>().texts.contact,
             onTap: () => Navigator.pushNamed(context, '/contact'),
-            reactive: true,
-          ),
-          MyFlatButton(
-            text: context.watch<LanguageModel>().texts.cv,
-            onTap: () => Navigator.pushNamed(context, '/cv'),
             reactive: true,
           ),
         ],
