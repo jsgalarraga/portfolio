@@ -70,7 +70,7 @@ class ExperienceTab extends StatelessWidget {
     return LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
           return Container(
-            height: 700,
+            height: 1700,
             width: constraints.maxWidth * .8,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -90,6 +90,26 @@ class ExperienceTab extends StatelessWidget {
                   title: context.watch<LanguageModel>().texts.deloitteTitle,
                   text: context.watch<LanguageModel>().texts.deloitteText,
                   period: context.watch<LanguageModel>().texts.deloittePeriod,
+                ),
+                CvEntry(
+                  title: context.watch<LanguageModel>().texts.tfmTitle,
+                  text: context.watch<LanguageModel>().texts.tfmText,
+                  period: context.watch<LanguageModel>().texts.tfmPeriod,
+                ),
+                CvEntry(
+                  title: context.watch<LanguageModel>().texts.openbankTitle,
+                  text: context.watch<LanguageModel>().texts.openbankText,
+                  period: context.watch<LanguageModel>().texts.openbankPeriod,
+                ),
+                CvEntry(
+                  title: context.watch<LanguageModel>().texts.tfgTitle,
+                  text: context.watch<LanguageModel>().texts.tfgText,
+                  period: context.watch<LanguageModel>().texts.tfgPeriod,
+                ),
+                CvEntry(
+                  title: context.watch<LanguageModel>().texts.a3ctiTitle,
+                  text: context.watch<LanguageModel>().texts.a3ctiText,
+                  period: context.watch<LanguageModel>().texts.a3ctiPeriod,
                 ),
               ],
             ),

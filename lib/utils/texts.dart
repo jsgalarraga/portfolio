@@ -71,7 +71,22 @@ abstract class Texts{
   String deloitteTitle;
   String deloitteText;
   String deloittePeriod;
-
+  //////TFM
+  String tfmTitle;
+  String tfmText;
+  String tfmPeriod;
+  //////Openbank
+  String openbankTitle;
+  String openbankText;
+  String openbankPeriod;
+  //////TFG
+  String tfgTitle;
+  String tfgText;
+  String tfgPeriod;
+  //////A3CTI
+  String a3ctiTitle;
+  String a3ctiText;
+  String a3ctiPeriod;
 }
 
 class EspTexts implements Texts{
@@ -200,6 +215,34 @@ class EspTexts implements Texts{
       'gestión de equipos.';
   @override
   String deloittePeriod = 'Sept 2019 - Feb 2020';
+  //////TFM
+  String tfmTitle = 'Asistente de Investigación en la Universidad Aalto';
+  String tfmText = 'Investigación sobre la reconstrucción 3D de modelos cerebrales a partir de imágenes tomadas por '
+      'resonancia magnética. Comparación de distintas herramientas de segmentación. Uso de MATLAB y 3D Slicer';
+  String tfmPeriod = 'Nov 2018 - May 2019';
+  //////Openbank
+  String openbankTitle = 'Analista Junior de Tecnología en Openbank';
+  String openbankText = 'Beca en el departamento de Tecnología y Operaciones. Encargado de dar apoyo en los proyectos '
+      'de desarrollo web y app, en cuestiones relativas al diseño de funcionalidades, gestión y seguimiento del '
+      'equipo de desarrollo y pruebas finales. Gestión y resolución de incidencias de los clientes en lo relativo a '
+      'la web y la app.\nDurante estos meses comprendí como funciona una gran empresa desde dentro, aumentó mi '
+      'capacidad de coordinación y comunicación con otros equipos de forma ágil, eficiente y con nuevas herramientas '
+      'como Jira o Slack.';
+  String openbankPeriod = 'Jun 2018 - Sept 2018';
+  //////TFG
+  String tfgTitle = 'Asistente de Investigación en el grupo CVAR';
+  String tfgText = 'Participación en la competición IMAV 2017 obteniendo el 2º puesto.\nDiseño, construcción e '
+      'implementación de un sistema mecánico para depositar objetos desde un dron. Uso de Solid Edge, impresión 3D y '
+      'ROS.\nEn este proyecto amplié mi capacidad de coordinación y reparto de tareas, trabajo en equipo y '
+      'resolución rápida de problemas.';
+  String tfgPeriod = 'Jun 2017 - Sept 2017';
+  //////A3CTI
+  String a3ctiTitle = 'Proyectista en A3CTI';
+  String a3ctiText = 'Digitalización de planos as-build de las instalaciones de la refinería de pretróleo de Huelva.\n'
+      'Uso de AutoCAD y Excel.\nEn mi primer contacto con una empresa de ingeniería aprendí a ajustarme a una rutina '
+      'de trabajo, tomar decisiones propias cuando la situación lo requiere, comunicación con el cliente y eficiencia '
+      'en el desempeño de mi tarea.';
+  String a3ctiPeriod = 'Jul 2016 - Nov 2016';
 }
 
 class EngTexts implements Texts {
@@ -324,6 +367,33 @@ class EngTexts implements Texts {
       'operates and its potential, also increasing my abilities to work with a team and manage tasks.';
   @override
   String deloittePeriod = 'Sept 2019 - Feb 2020';
+  //////TFM
+  String tfmTitle = 'Assistant Research Engineer at Aalto University';
+  String tfmText = 'Research about 3D model reconstruction of the brain using MRI (Magnetic Resonance Imaging). '
+      'Comparison of numerous segmentation algorithms. Worked with MATLAB and 3D Slicer.';
+  String tfmPeriod = 'Nov 2018 - May 2019';
+  //////Openbank
+  String openbankTitle = 'Junior Analyst at Openbank';
+  String openbankText = 'Internship in the T&O department. Responsible for giving support in web and app development '
+      'projects, in issues related to functionality design, management and monitoring of the development team and '
+      'final testing. Management of the resolution of customer incidents related with web and app.\nDuring these '
+      'experience I understood how a larger company works from the inside, and increased my coordination and '
+      'communication capabilities with other departments in an agile way, using new tools such as Slack and Jira.';
+  String openbankPeriod = 'Jun 2018 - Sept 2018';
+  //////TFG
+  String tfgTitle = 'Assistant Research Engineer at CVAR Group';
+  String tfgText = 'Participation in IMAV 2017 competition, obtaining the 2nd place.\nDesign, manufacturing and '
+      'implementation of a mechanic system able to leave objects from a flying drone. Worked with Solid Edge, 3D '
+      'printing and ROS.\nWith this project, I increased my ability to coordinate with team members and distribute '
+      'tasks, as well as quick problem solving.';
+  String tfgPeriod = 'Jun 2017 - Sept 2017';
+  //////A3CTI
+  String a3ctiTitle = 'Designer at A3CTI';
+  String a3ctiText = 'Graphic documentation update. Digitalize as-build P&I diagrams of current installations.\n'
+      'Worked with AutoCAD and Excel.\nI my first contact with an engineering company I learnt to adjust to a work '
+      'routine, make my own decisions when the situation requires, communication with the client and efficiency in '
+      'completing tasks.';
+  String a3ctiPeriod = 'Jul 2016 - Nov 2016';
 }
 
 enum Languages { esp, eng }

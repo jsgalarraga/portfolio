@@ -5,8 +5,7 @@ import 'package:portfolio/ui/cv/model.dart';
 import 'package:portfolio/utils/texts.dart';
 import 'package:portfolio/ui/portfolio/portfolio_page.dart';
 import 'package:provider/provider.dart';
-
-import 'ui/home/home_page.dart';
+import 'package:portfolio/ui/home/home_page.dart';
 
 void main() {
   runApp(
