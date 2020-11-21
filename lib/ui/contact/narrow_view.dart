@@ -30,6 +30,7 @@ class NarrowView extends StatelessWidget {
                           Email(),
                           Subject(),
                           Message(),
+                          SendResultMessage(),
                           SendButton(),
                         ],
                       ),

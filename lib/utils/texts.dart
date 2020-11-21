@@ -21,6 +21,8 @@ abstract class Texts{
   String subjectError;
   String message;
   String messageError;
+  String sentFeedbackSuccess;
+  String sentFeedbackError;
   String send;
 
   //CV Page
@@ -125,6 +127,11 @@ class EspTexts implements Texts{
   String subject = 'Asunto  *';
   @override
   String subjectError = 'Por favor, introduzca un asunto';
+  @override
+  String sentFeedbackSuccess = 'Mensaje enviado correctamente';
+  @override
+  String sentFeedbackError = 'Ha ocurrido un problema, intentelo más tarde.\nSi el problema persiste envíe un correo '
+      'a jsgalarraga25@gmail.com';
   @override
   String send = 'Enviar';
 
@@ -280,6 +287,11 @@ class EngTexts implements Texts {
   String subject = 'Subject  *';
   @override
   String subjectError = 'Please, enter a subject';
+  @override
+  String sentFeedbackSuccess = 'Message successfully sent';
+  @override
+  String sentFeedbackError = 'A problem has occurred. Please, try again later\nIf the problem persists, send an email '
+      'to jsgalarraga25@gmail.com';
   @override
   String send = 'Send';
 

@@ -1,6 +1,8 @@
+import 'package:cloud_functions/cloud_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/components/my_buttons.dart';
 import 'package:portfolio/components/my_text_form_field.dart';
+import 'package:portfolio/ui/contact/model.dart';
 import 'package:portfolio/utils/texts.dart';
 import 'package:provider/provider.dart';
 
@@ -113,6 +115,29 @@ class Message extends StatelessWidget {
   }
 }
 
+class SendResultMessage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    var _status = context.watch<ContactModel>().sendStatus;
+    switch(_status){
+      case sendStatuses.undefined:
+        return Container();
+      case sendStatuses.sending:
+        return Center(child: CircularProgressIndicator(valueColor: AlwaysStoppedAnimation<Color>(Colors.white)));
+      case sendStatuses.sent:
+        return Container(
+          child: Text(context.watch<LanguageModel>().texts.sentFeedbackSuccess),
+        );
+      case sendStatuses.error:
+        return Container(
+          child: Text(context.watch<LanguageModel>().texts.sentFeedbackError),
+        );
+    }
+    return Container();
+  }
+}
+
+
 class SendButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -123,12 +148,32 @@ class SendButton extends StatelessWidget {
         for (final field in allFields)
           hasError = !field.validate() || hasError;
         if (!hasError){
+          context.read<ContactModel>().update(sendStatuses.sending);
           Form.of(context).save();
-          //TODO: Hacer el envio del email
-          print('$name, $email, $subject, $message');
+          Map<String, String> _emailData = {
+            'email': email,
+            'name' : name,
+            'subject': subject,
+            'message': message
+          };
+          sendEmail(context, _emailData);
         }
-        FocusScope.of(context).unfocus();
       },
     );
   }
+}
+
+void sendEmail(BuildContext context, Map<String, String> data) async{
+  FirebaseFunctions functions = FirebaseFunctions.instance;
+  HttpsCallable callable = functions.httpsCallable('sendEmail');
+  final response = await callable(data);
+  final result = response.data['success'];
+  if (result == true){
+    context.read<ContactModel>().update(sendStatuses.sent);
+    for (final field in allFields)
+      field.controller.clear();
+  } else {
+    context.read<ContactModel>().update(sendStatuses.error);
+  }
+  FocusScope.of(context).unfocus();
 }

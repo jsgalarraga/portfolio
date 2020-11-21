@@ -20,7 +20,7 @@ class MyTextFormField extends StatefulWidget {
 }
 
 class _MyTextFormFieldState extends State<MyTextFormField> {
-  TextEditingController _controller = TextEditingController();
+  TextEditingController controller = TextEditingController();
   bool showError = false;
   InputBorder _border = OutlineInputBorder(
     borderRadius: BorderRadius.all(Radius.zero),
@@ -53,7 +53,7 @@ class _MyTextFormFieldState extends State<MyTextFormField> {
             : widget.isMessage ? 200 : 34
       ),
       child: TextFormField(
-        controller: _controller,
+        controller: controller,
         onSaved: widget.onSaved,
         onTap: (){
           setState(() {
@@ -82,8 +82,8 @@ class _MyTextFormFieldState extends State<MyTextFormField> {
 
   bool validate(){
     bool errorCondition = widget.isEmail
-        ? _controller.value.text.isEmpty || !_controller.value.text.contains('@')
-        : _controller.value.text.isEmpty;
+        ? controller.value.text.isEmpty || !controller.value.text.contains('@')
+        : controller.value.text.isEmpty;
     if (errorCondition){
       setState(() {
         showError = true;

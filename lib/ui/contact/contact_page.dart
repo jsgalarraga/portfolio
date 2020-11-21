@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/ui/contact/model.dart';
+import 'package:provider/provider.dart';
 import 'package:portfolio/ui/back_widget.dart';
 import 'package:portfolio/ui/contact/narrow_view.dart';
 import 'package:portfolio/ui/contact/wide_view.dart';
@@ -11,6 +13,13 @@ class ContactPage extends StatefulWidget {
 }
 
 class _ContactPageState extends State<ContactPage> {
+
+  @override
+  void initState() {
+    context.read<ContactModel>().clear();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

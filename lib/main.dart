@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/ui/contact/contact_page.dart';
+import 'package:portfolio/ui/contact/model.dart';
 import 'package:portfolio/ui/cv/cv_page.dart';
 import 'package:portfolio/ui/cv/model.dart';
 import 'package:portfolio/utils/texts.dart';
@@ -13,6 +14,7 @@ void main() {
       providers: [
         ChangeNotifierProvider(create: (_) => LanguageModel()),
         ChangeNotifierProvider(create: (_) => CvTabModel()),
+        ChangeNotifierProvider(create: (_) => ContactModel()),
       ],
       child: MyApp(),
     ),
